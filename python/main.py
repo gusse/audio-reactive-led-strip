@@ -229,5 +229,5 @@ if __name__ == '__main__':
                 last_plot_update_time = time.time()
 
         time.sleep(1e-3)
-        app.processEvents()
+        #app.processEvents()
     audio.end_stream()

@@ -40,6 +40,14 @@ def set_parser_from_config():
     parser.set('Hardware', 'device', str(DEVICE))
     parser.set('Hardware', 'pixels', str(N_PIXELS))
     parser.set('Hardware', 'sample_rate', str(MIC_RATE))
+    parser.set('Hardware', 'ledpin', str(LED_PIN))
+    parser.set('Hardware', 'ledfreqhz', str(LED_FREQ_HZ))
+    parser.set('Hardware', 'leddma', str(LED_DMA))
+    parser.set('Hardware', 'ledinvert', str(LED_INVERT))
+    parser.set('Hardware', 'brightness', str(BRIGHTNESS))
+    #parser.set('Hardware', 'sample_rate', str(MIC_RATE))
+    #parser.set('Hardware', 'sample_rate', str(MIC_RATE))
+
     # General
     parser.set('General', 'fps', str(FPS))
     parser.set('General', 'gui', str(USE_GUI))
@@ -57,10 +65,15 @@ def set_parser_from_config():
 def set_config_from_parser():
     """Set the config module's global variables to the parser values"""
     # Hardware
-    global DEVICE, N_PIXELS, MIC_RATE
+    global DEVICE, N_PIXELS, MIC_RATE, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, BRIGHTNESS
     DEVICE = parser.get('Hardware', 'device')
     N_PIXELS = parser.getint('Hardware', 'pixels')
     MIC_RATE = parser.getint('Hardware', 'sample_rate')
+    LED_PIN = parser.getint('Hardware', 'ledpin')
+    LED_FREQ_HZ = parser.getint('Hardware', 'ledfreqhz')
+    LED_DMA = parser.getint('Hardware', 'leddma')
+    LED_INVERT = parser.getint('Hardware', 'ledinvert')
+    BRIGHTNESS = parser.getint('Hardware', 'brightness')
     # General
     global FPS, USE_GUI
     FPS = parser.getint('General', 'fps')
