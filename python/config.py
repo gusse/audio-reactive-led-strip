@@ -54,10 +54,10 @@ N_PIXELS = 60
 GAMMA_TABLE_PATH = os.path.join(os.path.dirname(__file__), 'gamma_table.npy')
 """Location of the gamma correction table"""
 
-MIC_RATE = 48000
+MIC_RATE = 48100
 """Sampling frequency of the microphone in Hz"""
 
-FPS = 30
+FPS = 60
 """Desired refresh rate of the visualization (frames per second)
 
 FPS indicates the desired refresh rate, or frames-per-second, of the audio
@@ -76,7 +76,7 @@ depends on how long the LED strip is.
 _max_led_FPS = int(((N_PIXELS * 30e-6) + 50e-6)**-1.0)
 assert FPS <= _max_led_FPS, 'FPS must be <= {}'.format(_max_led_FPS)
 
-MIN_FREQUENCY = 100
+MIN_FREQUENCY = 90
 """Frequencies below this value will be removed during audio processing"""
 
 MAX_FREQUENCY = 12000
